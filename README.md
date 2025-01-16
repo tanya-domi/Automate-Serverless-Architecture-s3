@@ -21,7 +21,6 @@ This project sets up an AWS infrastructure to automatically process and sort upl
 - Step 7: Start app locally, test application and verify
 - Step 8: Clean up 
 
-
 ## Architecture Overview
 
 The system consists of the following components:
@@ -30,80 +29,27 @@ The system consists of the following components:
 - **ReactJS Frontend**: A simple web application allowing users to upload files to `bucket-in`.
 - **Terraform**: Used to provision and manage AWS resources.
 
-![Architecture Diagram](link-to-diagram-if-available)
 
 ![s3](https://github.com/cloudcore-hub/s3-file-uploader/assets/88560609/9a8df75f-5da5-4d0a-9702-e804a217c0c4)
 
+[![Terraform](https://github.com/tanya-domi/Automate-Serverless-Architecture-s3/actions/workflows/terraform.yaml/badge.svg)](https://github.com/tanya-domi/Automate-Serverless-Architecture-s3/actions/workflows/terraform.yaml)
 
 ![Screenshot 2024-04-09 at 8 31 23 AM](https://github.com/cloudcore-hub/s3-file-uploader/assets/88560609/3425a32c-2281-4383-b4c8-04511d5ab033)
+
+
+# AWS lambda function provisioned using Boto3 python module
+
+![Image](https://github.com/user-attachments/assets/869a61cb-648c-4f90-be52-dcdbb6ef8f91)
 
 
 # AutoSort: Automated File Management and Organization System on AWS
 This project, which automates the process of uploading files to an S3 bucket and then sorts these files into different folders based on their file type using a Lambda function, addresses several practical problems and streamlines workflows for businesses or individual users. 
 
 
-## Running the App Locally
+### Here's How This Solves Specific Challenges:
 
-This guide will walk you through the process of running the application on your local machine for development and testing purposes.
+![Image](https://github.com/user-attachments/assets/2c7d0564-5ba3-40dc-a77b-3f18f40b3d75)
 
-### Prerequisites
-
-Before you begin, ensure you have the following installed on your system:
-- [Node.js](https://nodejs.org/) (which includes npm)
-
-You can verify the installations by running `node -v` and `npm -v` in your terminal. This will output the version of Node.js and npm installed on your system, respectively.
-
-### Steps
-
-1. **Clone the Repository 
-
-
-   ```
-   git clone https://github.com/cloudcore-hub/s3-file-uploader.git
-   ```
-
-2. **Navigate to the Project Directory**
-
-   Change to the project directory in your terminal:
-
-   ```
-   cd s3-file-uploader
-   ```
-
-
-3. **Install Dependencies**
-
-   Install the project's dependencies by running:
-
-   ```
-   npm install
-   ```
-
-   This command reads the `package.json` file and installs all the required packages.
-
-4. **Start the Development Server**
-
-   Launch the development server with:
-
-   ```
-   npm run dev
-   ```
-
-   This command starts a local web server and opens the app in your default web browser. The development server watches for changes to your source code, so you can see updates in real-time as you develop.
-
-5. **Access the App**
-
-   By default, the app will be available at [http://localhost:3000](http://localhost:3000). Navigate to this URL in your web browser to view the app.
-
-## Troubleshooting
-
-- If you encounter any issues with `npm install`, try clearing the npm cache with `npm cache clean --force` and then rerun `npm install`.
-- Ensure your Node.js and npm are up to date to avoid compatibility issues with the dependencies.
-
-For more help or information, feel free to open an issue in the project's repository.
-
-
-Here's how this solves specific challenges:
 
 ### Automated File Organization
 
@@ -135,46 +81,9 @@ Here's how this solves specific challenges:
 - **Problem Solved**: Processing different types of files often requires specific actions or workflows. Without organization, automating these workflows can be challenging.
 - **How This Project Helps**: Sorting files into folders based on type can act as a precursor to more complex processing workflows. For instance, text files could be automatically sent through a text processing pipeline, while images could go through a different workflow for analysis or transformation.
 
-
-### Resources Clean-up using Terraform
-
-#### Prepare the files
-
-Comment this line in `lambda.tf` file 
-`source_code_hash = filebase64sha256(var.lambda_source_file)`
-
-Add this line to the file 
-`source_code_hash = "placeholder"`
-
-#### Delete the contents in the S3 bucket  
-
-Be sure you have awscli in setup locally.
-
-run `aws s3 rm s3://<bucket-name> --recursive`
-```
-aws s3 rm s3://cloudcore-s3-file-in --recursive
-aws s3 rm s3://cloudcore-s3-file-out --recursive
-```
-
-```
-terraform login
-```
- Type in `yes` and paste the token from Terraform Cloud
-
- cd into the the folder with the terraform file `/terraform`
-
- Run 
- ```
- terraform init
- ```
-
-then 
-
-```
-terraform destroy -auto-approve
-```
-
-
 ### Conclusion
 
 This project leverages AWS S3 for robust and scalable storage solutions, along with AWS Lambda for efficient, serverless computing. The automation of file uploads and sorting based on file types addresses key challenges in file management and data processing, making it a valuable solution for businesses and individual users looking to optimize their digital asset management and processing workflows.
+
+![Image](https://github.com/user-attachments/assets/48e3647f-7dbe-4e72-aa6a-64297003d3c2)
+
