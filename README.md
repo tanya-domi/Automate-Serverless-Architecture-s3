@@ -53,7 +53,7 @@ This project, which automates the process of uploading files to an S3 bucket and
 
 ### Automated File Organization
 
-- **Problem Solved**: Manual sorting of files is time-consuming and prone to human error. This is especially cumbersome for organizations dealing with large volumes of documents, images, or datasets.
+- **Problem Solved**: Manual sorting of files is time-consuming and prone to human error. This is especially cumbersome for organizations dealing with large volumes of documents, images, or datasets
 - **How This Project Helps**: Automatically sorting files by type upon upload reduces manual labor, enhances accuracy, and improves efficiency in managing digital assets.
 
 ### Efficient Data Management
